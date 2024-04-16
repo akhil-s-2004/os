@@ -1,0 +1,18 @@
+#!/bin/bash
+n1=$1
+n2=$2
+for(( i=$n1;i<=$n2;i++))
+do
+        rev=0
+        c=$i
+        while [ $c -gt 0 ]
+        do
+                digit=$(($c % 10))
+                rev=$(($rev * 10 + digit))
+                c=$(($c / 10))
+        done
+        if [ $i -eq $rev ]
+        then
+                 echo "$i"
+        fi
+done
